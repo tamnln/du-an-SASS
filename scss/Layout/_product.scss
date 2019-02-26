@@ -1,0 +1,81 @@
+.product{
+    background-color: $color-black;
+    padding-top: $pd-3;
+    ul{
+        margin: auto;
+        width: 50%;
+        .nav-item{
+            width: 25%;
+            text-align: center;
+            &:hover{
+                .nav-link{
+                    color: $color-white;
+                }
+            }
+            .nav-link{
+                @include text($color-grey, $fs-0, $fw-normal);
+                background: linear-gradient(#303030, #202020);
+                border: 1px solid $color-dark;
+                &.active{
+                    color: $color-blue;
+                }
+            }
+        }
+    }
+    .product_items{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        .item_one{
+            grid-column: 1/span 2;
+            grid-row:1/span 2;
+        }
+        img{
+            width: 100%;
+        }
+        .item{
+            position: relative;
+            border: 1px solid $color-black;
+            overflow: hidden;
+            &:hover{
+                .overlay_large{
+                    background-color: $color-black-dark;
+                    padding-bottom: $pd-5;
+                }
+                .overlay{
+                    bottom: 0px;
+                }
+            }
+            .overlay_large{
+                background-color: $color-black-light;
+                color: $color-white;
+                position: absolute;
+                bottom: 0;
+                width: 100%;
+                padding: $pd-2 $pd-3 $pd-3;
+                transition: all 0.5s            ;
+                -webkit-transition: all 0.5s            ;
+                -moz-transition: all 0.5s            ;
+                -ms-transition: all 0.5s            ;
+                -o-transition: all 0.5s            ;
+            }
+            .overlay{
+                background-color: $color-black-light;
+                color: $color-white;
+                position: absolute;
+                bottom: -120px;
+                width: 100%;
+                padding: $pd-2 $pd-3 $pd-3;
+                transition: all 0.5s            ;
+                -webkit-transition: all 0.5s            ;
+                -moz-transition: all 0.5s            ;
+                -ms-transition: all 0.5s            ;
+                -o-transition: all 0.5s            ;
+            }
+        }
+    }
+    @include respond-to('large'){
+        .product_items{
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+}

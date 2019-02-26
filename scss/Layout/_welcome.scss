@@ -1,0 +1,13 @@
+.welcome{
+    padding: $pd-3;
+    .underline{
+        @include underline($color-black);
+        height: 1px;
+    }
+    h1{
+        @include text($color-black, $fs-4, $fw-normal);
+    }
+    p{
+        @include text($color-black, $fs-1, $fw-normal);
+    }
+}

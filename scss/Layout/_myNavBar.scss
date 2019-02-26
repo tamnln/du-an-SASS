@@ -1,0 +1,39 @@
+.myNavBar{
+    background-color: $color-black;
+    .myNavBar_content{
+        width: 90%;
+        margin: auto;
+        .navbar-brand{
+            img{
+                width: 65px;
+                margin-right: $mg-2;
+            }
+            span{
+                color: $color-white;
+                font-size: $fs-0;
+            }
+        }
+        .navbar-nav{
+            position: relative;
+            .nav-item{
+                .nav-link{
+                    color: $color-grey;
+                }
+                &:hover{
+                    .nav-link{
+                        color: $color-blue;
+                    }
+                }
+                &.line{
+                    width: 1px;
+                    height: 25px;
+                    background-color: $color-white;
+                    position: absolute;
+                    top: 15px;
+                    right: 18%;
+                }
+            }
+        }
+        
+    }
+}
